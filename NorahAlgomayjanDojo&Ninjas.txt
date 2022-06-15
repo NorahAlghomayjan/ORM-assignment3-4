@@ -1,0 +1,48 @@
+from dojoNinja_app.models import *
+
+Dojos.objects.create(name='jhon',city='newyork',state='ny')
+Dojos.objects.create(name='sara',city='san fransisco',state='la')
+Dojos.objects.create(name='reem',city='riyadh',state='najed')
+
+c = Dojos.objects.all()
+c.delete()
+
+Dojos.objects.create(name='reem',city='riyadh',state='najed')
+Dojos.objects.create(name='sara',city='san fransisco',state='la')
+Dojos.objects.create(name='jhon',city='newyork',state='ny')
+
+dojo1 = Dojos.objects.get(name='reem')
+Ninjas.objects.create(first_name = 'Norah' , last_name='GH',dojo=dojo1)
+Ninjas.objects.create(first_name = 'Omar' , last_name='Sultan',dojo=dojo1)
+Ninjas.objects.create(first_name = 'Nouf' , last_name='GH',dojo=dojo1)
+
+dojo2 = Dojos.objects.get(name='sara')
+
+Ninjas.objects.create(first_name = 'Rawan' , last_name='Abd',dojo=dojo2)
+Ninjas.objects.create(first_name = 'Haitham' , last_name='Abd',dojo=dojo2)
+Ninjas.objects.create(first_name = 'Saad' , last_name='Abd',dojo=dojo2)
+
+dojo3 = Dojos.objects.get(name='jhon')
+
+Ninjas.objects.create(first_name = 'Fares' , last_name='Abd',dojo=dojo3)
+Ninjas.objects.create(first_name = 'Ibra' , last_name='Abd',dojo=dojo3)
+Ninjas.objects.create(first_name = 'Lana' , last_name='Abd',dojo=dojo3)
+
+Dojos.objects.get(id=4).ninjas
+
+Ninjas.objects.get(first_name='Lana').dojo
+
+exit()
+
+#added new field in Dojos called desc
+#python manage.py makemigrations
+#added the default value in models.py
+#python manage.py makemigrations
+#python manage.py migrate
+#python manage.py shell
+
+from dojoNinja_app.models import *
+
+Dojos.objects.create(name='Sameer',city='riyadh',state='najed',desc='wht is this')
+
+
